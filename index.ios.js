@@ -22,6 +22,11 @@ class osram extends Component {
             Press Cmd+R to reload,{'\n'}
             Cmd+D or shake for dev menu
           </Text>
+          <View style={{flexDirection: 'row'}}>
+            <View style={{backgroundColor: 'yellow', borderRadius:25, width: 50, height: 50}}/>
+            <View style={{backgroundColor: 'red', borderRadius:25, width: 50, height: 50}}/>
+            <View style={{backgroundColor: 'green', borderRadius:25, width: 50, height: 50}}/>
+          </View>
         </LinearGradient>
       </View>
     );
