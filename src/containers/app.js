@@ -11,12 +11,11 @@ class App extends Component {
     super(props);
   }
   componentDidMount() {
-    this.props.dispatch(fetchData());
     this.handleScan();
   }
   render() {
     const { state, actions } = this.props;
-      return (<MainView discoveredDevice={this.props.discoveredDevice} />);
+      return (<MainView />);
   }
 
   handleScan() {
@@ -26,6 +25,5 @@ class App extends Component {
 }
 
 export default connect(state => ({
-  isFetching: state.data.isFetching,
   discoveredDevice: state.bluetooth.discoveredDevice
 }))(App);

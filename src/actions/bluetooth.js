@@ -39,7 +39,7 @@ export const connectedDevice = (device) => {
   };
 };
 
-const connect = (device) => {
+export const connectDevice = (device) => {
   return (dispatch) => {
     dispatch(connectToDevice);
     const uuid = device.id;

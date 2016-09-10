@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import C from '../../constants';
 import {
   TouchableHighlight,
@@ -13,9 +14,12 @@ import MidText from '../MidText/midText';
 import BottomButtons from '../BottomButtons/bottomButtons';
 import ModalView from '../ModalView/modalView';
 
-export default class MainView extends Component {
+import { connectDevice } from '../../actions/bluetooth';
+
+class MainView extends Component {
   constructor(props) {
     super(props);
+    this.connect = this.connect.bind(this);
   }
 
   _getUIInformationFromState() {
@@ -46,9 +50,9 @@ export default class MainView extends Component {
         <Modal
         animationType={"slide"}
         transparent={false}
-        visible={!this.props.discoveredDevice}
+        visible={!this.props.connectedDevice}
         onRequestClose={() => {alert("Modal has been closed.")}}>
-       <ModalView {...this.props} conf={conf}/>
+       <ModalView {...this.props} connect={this.connect} conf={conf}/>
        </Modal>
         <LinearGradient colors={[conf.background.top, conf.background.bottom]} style={styles.linearGradient}>
           <TopImage conf={conf}/>
@@ -58,4 +62,13 @@ export default class MainView extends Component {
       </View>
     )
   }
+
+  connect() {
+    this.props.dispatch(connectDevice(this.props.discoveredDevice));
+  }
 }
+
+export default connect(state => ({
+  discoveredDevice: state.bluetooth.discoveredDevice,
+  connectedDevice: state.bluetooth.connectedDevice
+}))(MainView);

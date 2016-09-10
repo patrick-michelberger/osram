@@ -10,6 +10,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import TopImage from '../TopImage/topImage';
 import MidText from '../MidText/midText';
+import { connect } from "../../actions/bluetooth";
 
 export default class ModalView extends Component {
 
@@ -17,14 +18,10 @@ export default class ModalView extends Component {
     super(props);
   }
 
-  _connectDevice() {
-    console.log('connect');
-  }
-
   _renderConnectivity() {
     if (this.props.discoveredDevice) {
           return (
-              <TouchableOpacity onPress={this._connectDevice} style={{flex:1, alignItems:'center', justifyContent:'center', marginBottom:80}}>
+              <TouchableOpacity onPress={this.props.connect} style={{flex:1, alignItems:'center', justifyContent:'center', marginBottom:80}}>
                 <View style={styles.circularWrapper}>
                   <Image source={require('../../../shared/assets/img/lederhose.png')} style={{width:60, height: 60}} />
                 </View>
