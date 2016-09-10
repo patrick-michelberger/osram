@@ -1,10 +1,10 @@
 import C from '../constants';
 
 const bluetooth = (state = {
-  devices: {},
   isScanning: false,
   isConnecting: false,
-  connectedDevice: false
+  connectedDevice: null,
+  discoveredDevice: null
 }, action) => {
   switch (action.type) {
   case C.START_SCAN:
@@ -16,10 +16,8 @@ const bluetooth = (state = {
       isScanning: false
     });
   case C.DEVICE_FOUND:
-    let newDevice = {}
-    newDevice[action.device.id] = action.device;
     return Object.assign({}, state, {
-      devices: Object.assign({}, state.devices, newDevice)
+      discoveredDevice: action.device
     });
   case C.CONNECT_TO_DEVICE:
     return Object.assign({}, state, {

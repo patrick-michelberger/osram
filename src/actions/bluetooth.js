@@ -59,9 +59,8 @@ export const listenToDevices = () => {
     NativeAppEventEmitter
       .addListener('BleManagerDiscoverPeripheral', (data) => {
         if (data.id == "F510216B-DA50-05C7-748B-8F120981A43D") {
-          dispatch(connect(data));
+            dispatch(foundDevice(data));
         }
-        dispatch(foundDevice(data));
       });
   }
 }

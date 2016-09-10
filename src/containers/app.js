@@ -4,13 +4,11 @@ import MainView from '../components/MainView/mainView';
 
 import { connect } from "react-redux";
 import { fetchData } from "../actions";
-import { drinkBeer } from "../actions/state";
 import { listenToDevices, scanDevices } from "../actions/bluetooth";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.drinkBeer = drinkBeer;
   }
   componentDidMount() {
     this.props.dispatch(fetchData());
@@ -18,14 +16,9 @@ class App extends Component {
   }
   render() {
     const { state, actions } = this.props;
-      return (<MainView />);
+      return (<MainView discoveredDevice={this.props.discoveredDevice} />);
   }
-  handleDrinkBeer() {
-    console.log("handleDrinkBeer: ", this.state);
-    if (this.state.connectedDevice) {
-      drinkBeer(this.state.connectedDevice);
-    }
-  }
+
   handleScan() {
     this.props.dispatch(listenToDevices());
     this.props.dispatch(scanDevices());
@@ -34,5 +27,5 @@ class App extends Component {
 
 export default connect(state => ({
   isFetching: state.data.isFetching,
-  connectedDevice: state.bluetooth.connectedDevice
+  discoveredDevice: state.bluetooth.discoveredDevice
 }))(App);
