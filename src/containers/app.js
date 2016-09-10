@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Text, ScrollView } from "react-native";
+import MainView from '../components/MainView/mainView';
 
 import { connect } from "react-redux";
 import { fetchData } from "../actions";
@@ -17,9 +18,7 @@ class App extends Component {
   }
   render() {
     const { state, actions } = this.props;
-    return (
-        <Text onPress={this.handleDrinkBeer}>Osram Wiesn!</Text>
-      );
+      return (<MainView />);
   }
   handleDrinkBeer() {
     console.log("handleDrinkBeer: ", this.state);
