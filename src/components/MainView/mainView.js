@@ -15,11 +15,13 @@ import BottomButtons from '../BottomButtons/bottomButtons';
 import ModalView from '../ModalView/modalView';
 
 import { connectDevice } from '../../actions/bluetooth';
+import { sendState } from '../../actions/state';
 
 class MainView extends Component {
   constructor(props) {
     super(props);
     this.connect = this.connect.bind(this);
+    this.send = this.send.bind(this);
   }
 
   _getUIInformationFromState() {
@@ -57,7 +59,7 @@ class MainView extends Component {
         <LinearGradient colors={[conf.background.top, conf.background.bottom]} style={styles.linearGradient}>
           <TopImage conf={conf}/>
           <MidText title={'BEER'} text={'this is a test beer'}/>
-          <BottomButtons/>
+          <BottomButtons conf={conf} send={this.send} />
         </LinearGradient>
       </View>
     )
@@ -65,6 +67,10 @@ class MainView extends Component {
 
   connect() {
     this.props.dispatch(connectDevice(this.props.discoveredDevice));
+  }
+
+  send(state) {
+    this.props.dispatch(sendState(this.props.discoveredDevice, state));
   }
 }
 
