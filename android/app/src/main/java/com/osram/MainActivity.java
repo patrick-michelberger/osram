@@ -1,6 +1,8 @@
 package com.osram;
 
 import com.facebook.react.ReactActivity;
+import com.polidea.reactnativeble.BlePackage;
+import it.innove.BleManagerPackage;
 
 public class MainActivity extends ReactActivity {
 

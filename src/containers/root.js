@@ -6,7 +6,6 @@ import App from "../containers/app";
 
 const store = configureStore();
 
-
 class Root extends Component {
   render() {
     return (

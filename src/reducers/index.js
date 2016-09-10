@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 import * as types from "../actions";
+import bluetooth, * as fromBluetooth from './bluetooth';
+import state, * as fromState from './state';
 
 const data = (state = {
   isFetching: false,
@@ -21,7 +23,9 @@ const data = (state = {
 };
 
 const rootReducer = combineReducers({
-  data
+  data,
+  bluetooth,
+  state
 });
 
 export default rootReducer;
