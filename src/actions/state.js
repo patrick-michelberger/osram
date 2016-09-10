@@ -11,11 +11,11 @@ const getStateCode = (state) => {
     case C.STATE_FOOD:
       return base64.fromByteArray(new Uint8Array([51]));
     case C.STATE_COCKTAIL:
-      return base64.fromByteArray(new Uint8Array([52]));
+      return base64.fromByteArray(new Uint8Array([54]));
     case C.STATE_PUKE:
       return base64.fromByteArray(new Uint8Array([53]));
     case C.STATE_SMOKE:
-      return base64.fromByteArray(new Uint8Array([54]));
+      return base64.fromByteArray(new Uint8Array([52]));
     default:
       return base64.fromByteArray(new Uint8Array([55]));
   }

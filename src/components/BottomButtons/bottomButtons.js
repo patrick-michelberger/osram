@@ -15,7 +15,6 @@ export default class BottomButtons extends Component {
   }
 
   _onPress(type) {
-
     switch (type) {
       case C.STATE_BEER:
         this.props.send(C.STATE_BEER);
@@ -38,35 +37,6 @@ export default class BottomButtons extends Component {
       default:
         return;
     }
-
-    /*
-    switch (type) {
-      case 'beer':
-        this.setState({...this.props.conf, background: {
-          top: '#EDDE5D',
-          bottom: '#F09819'
-        },
-        topIcon: require('../../../shared/assets/img/beer.png')});
-        break;
-      case 'love':
-          this.setState({...this.props.conf, background: {
-            top: '#FFB88C',
-            bottom: '#DE6262'
-          }, topIcon: require('../../../shared/assets/img/love.png')});
-        break;
-      case 'food':
-          this.setState({...this.props.conf, background: {
-            top: '#b29f94',
-            bottom: '#603813'
-          }, topIcon: require('../../../shared/assets/img/food.png')});
-        break;
-      default:
-        this.setState({...this.props.conf, background: {
-        top: '#eef2f3',
-        bottom: '#8e9eab'
-      }, topIcon: require('../../../shared/assets/img/osram.png')});
-    }
-    */
   }
 
   render() {
@@ -96,23 +66,23 @@ export default class BottomButtons extends Component {
     </View>
     <View style={styles.bottomView}>
       <View style={[{backgroundColor: this.props.conf.background.bottom},styles.wrapper]}>
-        <TouchableOpacity onPress={this._onPress.bind(this, C.STATE_COCKTAIL)}>
+        <TouchableOpacity onPress={this._onPress.bind(this, C.STATE_SMOKE)}>
           <View style={styles.innerWrapper}>
-            <Image source={require('../../../shared/assets/img/love_filled.png')} style={styles.image} />
+            <Image source={require('../../../shared/assets/img/smoke_filled.png')} style={styles.image} />
           </View>
         </TouchableOpacity>
       </View>
       <View style={[{backgroundColor: this.props.conf.background.bottom},styles.wrapper]}>
         <TouchableOpacity onPress={this._onPress.bind(this, C.STATE_PUKE)}>
           <View style={styles.innerWrapper}>
-            <Image source={require('../../../shared/assets/img/beer_filled.png')} style={styles.image} />
+            <Image source={require('../../../shared/assets/img/puke_filled.png')} style={styles.image} />
           </View>
         </TouchableOpacity>
       </View>
       <View style={[{backgroundColor: this.props.conf.background.bottom},styles.wrapper]}>
-        <TouchableOpacity onPress={this._onPress.bind(this, C.STATE_SMOKE)}>
+        <TouchableOpacity onPress={this._onPress.bind(this, C.STATE_COCKTAIL)}>
           <View style={styles.innerWrapper}>
-            <Image source={require('../../../shared/assets/img/food_filled.png')} style={styles.image} />
+            <Image source={require('../../../shared/assets/img/cocktail_filled.png')} style={styles.image} />
           </View>
         </TouchableOpacity>
       </View>

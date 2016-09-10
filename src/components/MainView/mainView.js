@@ -25,7 +25,7 @@ class MainView extends Component {
   }
 
   _getUIInformationFromState() {
-    switch (this.props.state) {
+    switch (this.props.state.state) {
       case C.STATE_BEER:
         return {
           background: {
@@ -34,6 +34,44 @@ class MainView extends Component {
           },
           topIcon: require('../../../shared/assets/img/beer.png')
         };
+      case C.STATE_LOVE:
+        return {
+          background: {
+            top: '#FFB88C',
+            bottom: '#DE6262'
+          }, topIcon: require('../../../shared/assets/img/love.png')
+        };
+      case C.STATE_FOOD:
+        return {
+            background: {
+            top: '#b29f94',
+            bottom: '#603813'
+          }, topIcon: require('../../../shared/assets/img/food.png')
+        };
+      case C.STATE_COCKTAIL:
+        return {
+          background: {
+            top: '#85D8CE',
+            bottom: '#085078'
+          },
+          topIcon: require('../../../shared/assets/img/cocktail.png')
+        };
+      case C.STATE_PUKE:
+        return {
+          background: {
+            top: '#B5AC49',
+            bottom: '#3CA55C'
+          },
+          topIcon: require('../../../shared/assets/img/puke.png')
+        };
+      case C.STATE_SMOKE:
+      return {
+        background: {
+          top: '#dc2430',
+          bottom: '#7b4397'
+        },
+        topIcon: require('../../../shared/assets/img/smoke.png')
+      };
       default:
         return {
           background: {
@@ -47,6 +85,7 @@ class MainView extends Component {
 
   render() {
     var conf = this._getUIInformationFromState();
+    console.log("CONF:" , conf);
     return (
       <View style={styles.container}>
         <Modal
@@ -76,5 +115,6 @@ class MainView extends Component {
 
 export default connect(state => ({
   discoveredDevice: state.bluetooth.discoveredDevice,
-  connectedDevice: state.bluetooth.connectedDevice
+  connectedDevice: state.bluetooth.connectedDevice,
+  state: state.state
 }))(MainView);
