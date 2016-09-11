@@ -40,7 +40,7 @@ export default class ModalView extends Component {
       <View style={styles.container}>
         <LinearGradient colors={[this.props.conf.background.top, this.props.conf.background.bottom]} style={styles.linearGradient}>
           <TopImage conf={this.props.conf}/>
-          <MidText text={'Please connect your Lederhosen'}/>
+          <MidText title={'Servus'} text={'Please connect your Lederhosen'}/>
           {this._renderConnectivity()}
         </LinearGradient>
       </View>

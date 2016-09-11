@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         fontFamily: 'GillSans-Light',
         marginBottom: 5,
-        fontSize: 18
+        fontSize: 26
     },
     titles: {
         fontFamily: 'GillSans-Light',
