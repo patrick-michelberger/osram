@@ -32,21 +32,35 @@ class MainView extends Component {
             top: '#EDDE5D',
             bottom: '#F09819'
           },
-          topIcon: require('../../../shared/assets/img/beer.png')
+          topIcon: require('../../../shared/assets/img/beer.png'),
+          content: {
+            title: "Beer",
+            text: "Cheers"
+          }
         };
       case C.STATE_LOVE:
         return {
           background: {
             top: '#FFB88C',
             bottom: '#DE6262'
-          }, topIcon: require('../../../shared/assets/img/love.png')
+          },
+          topIcon: require('../../../shared/assets/img/love.png'),
+          content: {
+            title: "Love",
+            text: "Good Luck!"
+          }
         };
       case C.STATE_FOOD:
         return {
-            background: {
+          background: {
             top: '#b29f94',
             bottom: '#603813'
-          }, topIcon: require('../../../shared/assets/img/food.png')
+          },
+          topIcon: require('../../../shared/assets/img/food.png'),
+          content: {
+            title: "Food",
+            text: "Have good one!"
+          }
         };
       case C.STATE_COCKTAIL:
         return {
@@ -54,7 +68,11 @@ class MainView extends Component {
             top: '#85D8CE',
             bottom: '#085078'
           },
-          topIcon: require('../../../shared/assets/img/cocktail.png')
+          topIcon: require('../../../shared/assets/img/cocktail.png'),
+          content: {
+            title: "Cocktail",
+            text: "Cheers!"
+          }
         };
       case C.STATE_PUKE:
         return {
@@ -62,7 +80,11 @@ class MainView extends Component {
             top: '#B5AC49',
             bottom: '#3CA55C'
           },
-          topIcon: require('../../../shared/assets/img/puke.png')
+          topIcon: require('../../../shared/assets/img/puke.png'),
+          content: {
+            title: "Puke",
+            text: "OMG!"
+          }
         };
       case C.STATE_SMOKE:
       return {
@@ -70,7 +92,11 @@ class MainView extends Component {
           top: '#dc2430',
           bottom: '#7b4397'
         },
-        topIcon: require('../../../shared/assets/img/smoke.png')
+        topIcon: require('../../../shared/assets/img/smoke.png'),
+        content: {
+          title: "Smoke",
+          text: "Don't be a maybe!"
+        }
       };
       default:
         return {
@@ -78,7 +104,11 @@ class MainView extends Component {
             top: '#eef2f3',
             bottom: '#8e9eab'
           },
-          topIcon: require('../../../shared/assets/img/osram.png')
+          topIcon: require('../../../shared/assets/img/osram.png'),
+          content: {
+            title: "Welcome to Smart Lederhosen!",
+            text: ""
+          }
         };
     }
   }
@@ -97,7 +127,7 @@ class MainView extends Component {
        </Modal>
         <LinearGradient colors={[conf.background.top, conf.background.bottom]} style={styles.linearGradient}>
           <TopImage conf={conf}/>
-          <MidText title={'BEER'} text={'this is a test beer'}/>
+          <MidText title={conf.content.title} text={conf.content.text}/>
           <BottomButtons conf={conf} send={this.send} />
         </LinearGradient>
       </View>

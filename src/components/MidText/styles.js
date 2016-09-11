@@ -8,10 +8,13 @@ const styles = StyleSheet.create({
         color: '#ffffff',
         fontFamily: 'GillSans-Light',
         marginBottom: 5,
+        fontSize: 18
     },
     titles: {
         fontFamily: 'GillSans-Light',
-        letterSpacing: 2
+        letterSpacing: 2,
+        fontSize: 32,
+        fontWeight: "normal"
     },
 });
 
