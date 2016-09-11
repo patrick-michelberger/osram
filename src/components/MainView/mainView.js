@@ -35,7 +35,7 @@ class MainView extends Component {
           topIcon: require('../../../shared/assets/img/beer.png'),
           content: {
             title: "Beer",
-            text: "Cheers"
+            text: "Oans, zwoa, g'suffa!"
           }
         };
       case C.STATE_LOVE:
@@ -59,7 +59,7 @@ class MainView extends Component {
           topIcon: require('../../../shared/assets/img/food.png'),
           content: {
             title: "Food",
-            text: "Have good one!"
+            text: "Enjoy your meal!"
           }
         };
       case C.STATE_COCKTAIL:
@@ -106,8 +106,8 @@ class MainView extends Component {
           },
           topIcon: require('../../../shared/assets/img/osram.png'),
           content: {
-            title: "Welcome to Smart Lederhosen!",
-            text: ""
+            title: "Welcome",
+            text: "select your current state"
           }
         };
     }
