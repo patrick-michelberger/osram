@@ -725,7 +725,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.osram;
-				PRODUCT_NAME = osram;
+				PRODUCT_NAME = Lederhosen;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -753,7 +753,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.osram;
-				PRODUCT_NAME = osram;
+				PRODUCT_NAME = Lederhosen;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
