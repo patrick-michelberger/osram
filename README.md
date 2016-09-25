@@ -1,8 +1,11 @@
 ##Super Lederhosen 
+Communicate through your Lederhosen via LED through a smartphone app and bluetooth.
+
 * 6 different status types to choose from
 * communicate through your Lederhosen
 * BLE
 * React Native
+* Self build LED matrix 
 
 ![alt-tag](http://i.giphy.com/3o7TKUXl2EP9gCcuQM.gif)
 
